@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>바이맘 브랜드 스토리</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    @font-face {
+      font-family: "Pretendard-Regular";
+      src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    body {
+      font-family: 'Pretendard-Regular', 'Montserrat', sans-serif;
+      background: #fff;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+    }
+
+    .video-wrap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .video-wrap video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+    }
+
+    .txt-wrap h1 {
+  margin-bottom: 1rem;
+}
+
+    .txt-wrap.visible {
+      opacity: 1;
+    }
+
+    .pc-txtwrap {
+      display: block;
+    }
+
+    .mobile-txtwrap {
+      display: none;
+    }
+
+    section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5rem 1rem;
+      transition: background 0.4s ease;
+    }
+
+    .content {
+      max-width: 1200px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    .section-text {
+      flex: 1;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .section-text.animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section-img {
+      flex: 1;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .section-img.animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section-img img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 12px;
+      transition: transform 0.5s ease, filter 0.5s ease;
+    }
+
+    .section-img img:hover {
+      transform: scale(1.05);
+      filter: brightness(1.05) saturate(1.2);
+    }
+
+    .gray {
+      background-color: #f9f9f9;
+    }
+
+    .centered {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .centered .section-img img {
+      max-width: 700px;
+      margin-bottom: 2rem;
+    }
+
+    .bymom-footer {
+      text-align: center;
+      padding: 4rem 1rem;
+      background: #ececec;
+      color: #666;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .bymom-footer.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .bymom-footer h2 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      color: #222;
+    }
+
+    .bymom-footer p {
+      font-size: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .content {
+        flex-direction: column;
+      }
+      .pc-txtwrap {
+        display: none;
+      }
+      .mobile-txtwrap {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="txt-wrap">
+      <h1 style="font-family: montserrat; font-size: 200%">
+        Deep Sleep, Deep Life
+      </h1>
+      <div class="pc-txtwrap">
+        <p>당신의 잠이 잠다울 수 있도록,<br />당신의 공간이 당신다울 수 있도록,<br />바이맘이 함께 합니다.</p>
+      </div>
+      <div class="mobile-txtwrap">
+        <p>당신의 잠이<br />잠다울 수 있도록,<br />당신의 공간이<br />당신다울 수 있도록,<br />바이맘이 함께 합니다.</p>
+      </div>
+    </div>
+    <div class="video-wrap">
+      <video src="https://res.cloudinary.com/deh9kryuo/video/upload/v1744984904/gerso0fdcz6uakon5iwo.mp4" autoplay muted loop poster="https://bymstore.cafe24.com/web/2025/carnight-min.png"></video>
+    </div>
+  </div>
+  <div class="spacer" style="height: 80px"></div>
+
+  <!-- 섹션 예시 -->
+  <section>
+    <div class="content">
+      <div class="section-img"><img src="lakenighttest.png" alt=""></div>
+      <div class="section-text">
+        <h2>오직, 수면과 쉼을 위한 공간</h2>
+        <p>바이맘 수면 텐트는 잠을 방해하는 요소를 차단하면서도 설치는 간편하게, 관리는 편리하게,<br>오래도록 안전하게 사용할 수 있도록 설계되었습니다. 수면을 넘어 쉼의 공간을 연구합니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <div class="bymom-footer visible">
+    <h2>Deep Sleep, Deep Life</h2>
+    <p>건강한 잠은 건강한 하루를 만듭니다.<br />‘잘 잤다’라는 기분으로 시작하는 아름다운 아침을 위해,<br />바이맘이 함께하겠습니다.</p>
+  </div>
+
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      document.querySelector(".txt-wrap").classList.add("visible");
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate");
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll(".section-img, .section-text, .bymom-footer").forEach((el) => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>

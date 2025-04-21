@@ -1,0 +1,222 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.html,
+body {
+  margin: 0;
+  height: 100%;
+  font-family: "Pretendard Variable", Pretendard, "Montserrat", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  background-color: #fff;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 400px; 
+  overflow: hidden;
+}
+
+.video-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.video-wrap video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.txt-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  color: #fff;
+  text-align: center;
+  opacity: 0; 
+  transition: opacity 1.2s ease-out;
+  line-height: 170%;
+}
+
+.txt-wrap h1 {
+  margin-bottom: 1.5rem; /* 원하시는 만큼 조절하세요 */
+}
+
+.txt-wrap.visible {
+  opacity: 1;
+}
+
+.pc-txtwrap {
+  display: block;
+}
+
+.mobile-txtwrap {
+  display: none;
+}
+
+
+/*이미지 텍스트 영역 시작*/
+
+section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2.5rem 0;
+  margin: 0;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.content {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2rem;
+  row-gap: 2rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+.content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+section + section .content {
+  border-top: 1px solid #ccc; 
+  padding-top: 5rem;         
+}
+
+.fade-img {
+  position: relative;
+  width: 600px;
+  margin-bottom: 0;
+  border-radius: 15px;
+}
+
+.image .visible:hover {
+  object-fit: cover;
+  transform: scale(1.05);
+  transition: transform 1s ease; 
+}
+
+.bymom-footer.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.txt-box h2 {
+font-family: "Pretendard Variable", sans-serif;
+font-size: 2rem;
+margin-bottom: 1rem;
+font-weight: 700;
+}
+
+.txt-box p {
+font-size: 1.1rem;
+line-height: 1.7;
+}
+
+.fall {
+  animation: fall 0.8s ease-out forwards;
+}
+
+/*footer 영역*/
+.bymom-footer {
+text-align: center;
+padding: 10rem 1rem;
+background: #ececec;
+color: #666;
+opacity: 0;
+transform: translateY(30px);
+transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.bymom-footer .visible {
+opacity: 1;
+transform: translateY(0);
+}
+
+.bymom-footer h2 {
+font-size: 1.6rem;
+margin-bottom: 1rem;
+color: #222;
+}
+
+.bymom-footer p {
+font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+
+  .txt-wrap h1 {
+    font-size: 1.5rem;
+  }
+  .txt-wrap p {
+    font-size: 0.95rem;
+  }
+  .pc-txtwrap {
+    display: none;
+  }
+  .mobile-txtwrap {
+    display: block;
+  }
+  .txt-wrap {
+    top: 200px;
+    padding: 0 1rem;
+    width: 100%;
+    max-width: 90%;
+    box-sizing: border-box;
+  }
+
+  .fade-img {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    z-index: 3;
+  }
+
+  .txt-box{
+    position: relative;
+    top: 10%;
+  }
+}
+
+  @keyframes fall {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(50px);
+    }
+    70% {
+      transform: translateY(30px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
